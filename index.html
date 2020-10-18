@@ -8,11 +8,32 @@
         content="width=device-width, initial-scale=1.0"
     >
     <title>Document</title>
+
+    <!-- BAD PRATCIE IN MOST CASES! -->
+    <script src="./header.js"></script>
 </head>
 
 <body>
 
-    <script src="./script.js"></script>
+    <h1>Hello</h1>
+
+    <script>
+        console.log('script tag 1')
+    </script>
+
+    <script src="./script.js">
+        // I will not be called
+        // because src argument is present
+        console.log('script tag 2')
+    </script>
+
+    <script>
+        console.log('script tag 3')
+    </script>
+
+    <script>
+        console.log(document.querySelector('h1'))
+    </script>
 
 </body>
 
